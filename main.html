@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- jQuery library -->
+
+</head>
+<body>
+    <div class="container">
+
+        <!-- The carousel -->
+        <div id="main-carousel" class="carousel slide mt-4 col-md-10 offset-md-1 carousel-fade" data-interval="100">
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <!--<div class="carousel-item active">-->
+                    <!--<img src="images/Card_3.jpg" id="3" alt="Los Angeles" >-->
+                <!--</div>-->
+                <!--<div class="carousel-item">-->
+                    <!--<img src="images/Card_2.jpg" id="2" alt="Chicago" >-->
+                <!--</div>-->
+                <!--<div class="carousel-item">-->
+                    <!--<img src="images/Card_1.jpg" id="1" alt="New York" >-->
+                <!--</div>-->
+            </div>
+            <div class="col-md-12 mt-4 p-1">
+                <div class="col-md-12 mb-4 p-0 trial-question">
+                    <div class="col-md-12 shortq-questions mb-1 p-0">
+                        <h5 class="question-post-study">I believe the highlighted explanation is appropriate with regards to the system answer.</h5>
+                    </div>
+                    <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding p-0" id="exp" data-toggle="buttons" onchange="radioChange();">
+                        <label class="btn btn-primary mr-2 rounded">Strongly disagree<input type="radio" value="-2"></label>
+                        <label class="btn btn-primary mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+                        <label class="btn btn-primary mr-2 rounded">Neutral<input type="radio" value="0"></label>
+                        <label class="btn btn-primary mr-2 rounded">Agree<input type="radio" value="1"></label>
+                        <label class="btn btn-primary mr-2 rounded">Strongly agree<input type="radio" value="2"></label>
+                    </div>
+
+                </div>
+                <div class="col-md-12 mb-4 p-0 trial-question">
+                    <div class="col-md-12 shortq-questions mb-1 p-0">
+                        <h5 class="question-post-study">I am confident that the system answer is correct.</h5>
+                    </div>
+                    <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding p-0 " id="label" data-toggle="buttons" onchange="radioChange();">
+                        <label class="btn btn-primary mr-2 rounded">Strongly disagree<input type="radio" value="-2"></label>
+                        <label class="btn btn-primary mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+                        <label class="btn btn-primary mr-2 rounded">Neutral<input type="radio" value="0"></label>
+                        <label class="btn btn-primary mr-2 rounded">Agree<input type="radio" value="1"></label>
+                        <label class="btn btn-primary mr-2 rounded">Strongly agree<input type="radio" value="2"></label>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4 p-0 d-none trust-question">
+                    <div class="col-md-12 shortq-questions mb-1 p-0">
+                        <h5 class="question-post-study">Please report your level of trust in the system's ability to correctly classify arthropods (insects, spiders, bugs, etc.) based on all the labelled images you  have seen so far.</h5>
+                    </div>
+                    <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding p-0" id="trust" data-toggle="buttons" onchange="trustRateChange();">
+                        <label class="btn btn-primary mr-2 rounded">1 (Distrust)<input type="radio" value="1"></label>
+                        <label class="btn btn-primary mr-2 rounded">2<input type="radio" value="2"></label>
+                        <label class="btn btn-primary mr-2 rounded">3<input type="radio" value="3"></label>
+                        <label class="btn btn-primary mr-2 rounded">4 (Neutral)<input type="radio" value="4"></label>
+                        <label class="btn btn-primary mr-2 rounded">5<input type="radio" value="5"></label>
+                        <label class="btn btn-primary mr-2 rounded">6<input type="radio" value="6"></label>
+                        <label class="btn btn-primary mr-2 rounded">7 (Trust)<input type="radio" value="7"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-10 offset-md-1 mt-2 p-4 text-right">
+            <button type="button" id="myBtn2" class="btn btn-danger trial-question disabled">Next Item</button>
+            <button type="button" id="nextSet" class="btn btn-danger trust-question disabled d-none" onclick="startNewTrial();">Continue</button>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

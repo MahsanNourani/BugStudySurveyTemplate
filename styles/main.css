@@ -1,0 +1,19 @@
+.carousel-inner img {
+    width: 100%;
+}
+.vertical-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-primary.active, .btn-primary:active {
+     box-shadow: 0 0 0 0.2rem #004085;
+}
+
+.btn-info.active, .btn-info:active {
+    box-shadow: 0 0 0 0.2rem #004085;
+}
+
+.needs-to-be-filled {
+    box-shadow: 0px 0px 3px 0.2rem #e42440c7;
+}

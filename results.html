@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <p class="col-md-10 offset-md-1 rounded bg-warning shadow mt-4 p-2 bg-white font-weight-bold" style="font-size: 20px;">Thank you for your time! Please click the button below to submit your results. Do not click back button, or your progress will be lost.</p>
+    </div>
+    <div class="row">
+        <!--<form action="server.php" method="post">-->
+        <!--<input type="textarea" name="response" value='' id="results" >-->
+        <!--<input type="submit">-->
+        <!--</form>-->
+        <div class="col-md-10 offset-md-1">
+            <form action="server.php" method="post">
+                <input type="textarea" name="response" value='' id="results" class="d-none">
+                <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
+<script src="scripts/userStudy.js"></script>
+<script>
+    d3.select("#results").attr('value', "'"+ prepareResponsesForDB() + "'");
+    $('#submit').click();
+    // window.onbeforeunload = confirmExit;
+    // function confirmExit()
+    // {
+    //     // if (d3.select(".btn-primary:focus"))
+    //     //     return void(0);
+    //     return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+    // }
+</script>
+</body>
+</html>

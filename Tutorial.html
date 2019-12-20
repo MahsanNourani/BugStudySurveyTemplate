@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .jumbotron {
+            min-height: 618px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <div class=" text-center mb-4">
+        <h4 class="col-md-12"> Please read the instructions carefully. You will not have access to these instructions during the task. </h4>
+    </div>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" id="intro">
+                <div class="jumbotron">
+                    <h3>Introduction</h3>
+                    <p>
+                        We are using an intelligent system to classify arthropods based on a machine learning model.
+                        Our system receives an image as input and then labels it as a specific species.
+                        The system will then provide two outputs for the image:
+                        <ul>
+                            <li>The first output is the classification of the image, which we refer to as the <b>system answer</b>.</li>
+                    <li> For the second output, the system would highlight the areas in the original image where the algorithm used to determine the answer. We call this output the <b>explanation</b>.</li>
+                        </ul>
+
+                        You will see an example image on the next slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" id="example2">
+                <div class="jumbotron pt-2 pb-2">
+                    <h3>Here is an example of the system's input and outputs:</h3>
+                    <img src="images/intro.jpg" class="col-md-10 offset-md-1 mb-4">
+                    <p>
+                        The original image is shown on the left.
+                        On the bottom of the image, you will see the answer that the system generated for this image.
+                        In other words, in this example, our system classifies the arthropod in the image as a <b>Leaf Hopper</b>. <br>
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item" id="example">
+                <div class="jumbotron pt-2 pb-2">
+                    <h3>Here is an example of the system's input and outputs:</h3>
+                    <img src="images/intro.jpg" class="col-md-10 offset-md-1 mb-4">
+                    <p>
+                        On the image on the right, you can see 3 areas are highlighted in light blue.
+                        These are the areas that the algorithm used to produce the label. In other words, these areas <b>explain</b> why the system believes the image shows a Leaf Hopper.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item" id="task">
+                <div class="jumbotron">
+                    <h3>Now you understand the system's inputs and outputs... </h3>
+                    <p>
+                        In this study, you will see a few of these images and outputs (trial).
+                        For each trial, you will answer 2 questions:
+                        <ol>
+                            <li> whether you find the explanation appropriate based on the system's answer;</li>
+                            <li>your confidence in correctness of the system's answer.</li>
+                        </ol>
+                        <!--<img src="images/introQuestions.png" class="col-md-10 offset-md-1 mt-4 mb-4 border border-secondary p-0 rounded">-->
+                        <br> Don't worry if the image subject is unfamiliar, you can use the explanation to justify your response.
+                        Use your best judgement to answer the questions.
+                        You might also encounter other questions throughout the trials. Please answer them accordingly.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item" id="ready">
+                <div class="jumbotron">
+                    <h3>Here is a summary of your tasks:</h3>
+                    <p>
+                        For each trial, you should:
+                        <ol>
+                            <li> Carefully observe the explanation and the label;</li>
+                            <li> Answer two questions per image set: We want to know if you believe the highlighted explanation is appropriate with regards to the label, and your confidence with respect to the label. </li>
+                        </ol>
+                        Also, throughout the study, you should:
+                        <ul>
+                            <li>answer any other questions you encounter, accordingly.</li>
+                        </ul>
+
+                        <h4 class="text-danger">Are you ready to start?</h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--<div class="col-md-12 mb-4">-->
+    <div class="row">
+        <div class="col-md-9 offset-md-4">
+            <a id="prev" class="btn btn-warning col-md-3  trial-question disabled">Previous</a>
+            <a id="next" class="btn btn-warning  col-md-3 trial-question">Next <span class="fas fa-arrow-right"></span></a>
+            <a class="btn btn-success text-white d-none col-md-4" data-toggle="modal" data-target="#confirm" id="continue">Continue to the Main Task</a>
+        </div>
+    </div>
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12 text-right">-->
+            <!--<a class="btn btn-success text-white col-md-3 d-none" onclick="toMain();" id="continue">Continue to the Main Task</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!-- The Modal -->
+    <div class="modal fade" id="confirm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Warning!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Are you sure you want to start the task? Once you move to the main task, you will not have access to the instructions.
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="toMain();">Proceed to the Task</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
+<script src="scripts/userStudy.js"></script>
+<script src="scripts/tutorial.js"></script>
+
+</body>
+</html>

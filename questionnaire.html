@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post-study Questionnaire</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class=" text-center mb-4">
+        <h4 class="col-md-12"> Post Study Questionnaire: Please answer the following questions.</h4>
+    </div>
+    <div class="row" id="questionnaire">
+        <span class="col-md-8 mb-1 mt-4">What do you think the percentage of accuracy in our image classifier is? (on a scale of 0 to 100)</span>
+        <div class="col-md-4 mb-1 mt-4 mb-4">
+            <input type="number" class="form-control" id="acc" onchange="radioChange('#acc');">
+        </div>
+        <span class="col-md-12 mb-1">In general, I felt the system produced accurate labels.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="acc1" data-toggle="buttons" onchange="radioChange('#acc1');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">In general, I felt the system produced accurate explanations.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="acc2" data-toggle="buttons" onchange="radioChange('#acc2');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">I am confident in the image classifier. I feel that it works well.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="conf" data-toggle="buttons" onchange="radioChange('#conf');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">The outputs (label and explanation) of the classifier are very predictable with respect to each other.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="pred" data-toggle="buttons" onchange="radioChange('#pred');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">The classifier is very reliable. I can count on it to be correct all the time.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="rel" data-toggle="buttons" onchange="radioChange('#rel');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">The classifier can perform better than a novice human user.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="nov" data-toggle="buttons" onchange="radioChange('#nov');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">I like using the system for decision-making.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="like" data-toggle="buttons" onchange="radioChange('#like');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+        <span class="col-md-12 mb-1 mt-4">I trust the outcomes of the classifier.</span>
+        <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="trst" data-toggle="buttons" onchange="radioChange('#trst');">
+            <label class="btn btn-info mr-2 rounded">Strongly Disagree<input type="radio" value="-2"></label>
+            <label class="btn btn-info mr-2 rounded">Disagree<input type="radio" value="-1"></label>
+            <label class="btn btn-info mr-2 rounded">Neutral<input type="radio" value="0"></label>
+            <label class="btn btn-info mr-2 rounded">Agree<input type="radio" value="1"></label>
+            <label class="btn btn-info rounded">Strongly Agree<input type="radio" value="2"></label>
+        </div>
+
+        <span class="col-md-6 mb-1 mt-4">How did <b>your overall trust in the system</b> change as you continued the test? Please briefly justify your answer.</span>
+        <!--<div class="col-md-6 mb-1 mt-4">-->
+        <textarea type="text" class="form-control col-md-6 mb-1 mt-4" id="trstChng" onchange="radioChange('#trstChng');"></textarea>
+        <!--</div>-->
+        <span class="col-md-6 mb-1 mt-4">How did <b>your assessment of the system's accuracy</b> change as you continued the test? Please briefly justify your answer.</span>
+        <textarea type="text" class="form-control col-md-6 mb-1 mt-4" id="accChng" onchange="radioChange('#accChng');"></textarea>
+
+        <span class="col-md-6 mb-1 mt-4">Was there anything specific that made the task harder or easier, or do you have any other feedback? Please breifly explain.</span>
+        <textarea type="text" class="form-control col-md-6 mb-1 mt-4" id="cmnt" onchange="radioChange('#cmnt');"></textarea>
+
+
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-md-12 text-right">
+            <button class="btn btn-success col-md-3" onclick="submitResponses();">Continue</button>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
+<script src="scripts/userStudy.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Questionnaire</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class=" text-center mb-4">
+            <h4 class="col-md-12"> Background Questionnaire: Please answer the following questions.</h4>
+        </div>
+        <div class="row" id="questionnaire">
+            <span class="col-md-12 mb-1">What is you age?</span>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="age" data-toggle="buttons" onchange="radioChange('#age');">
+                <label class="btn btn-info mr-2 rounded">18 - 24<input type="radio" value="18-24"></label>
+                <label class="btn btn-info mr-2 rounded">25 - 34<input type="radio" value="25-34"></label>
+                <label class="btn btn-info mr-2 rounded">35 - 44<input type="radio" value="35-44"></label>
+                <label class="btn btn-info mr-2 rounded">45 - 54<input type="radio" value="45-54"></label>
+                <label class="btn btn-info mr-2 rounded">55 - 64<input type="radio" value="55-64"></label>
+                <label class="btn btn-info rounded">65 or older<input type="radio" value="65+"></label>
+            </div>
+            <span class="col-md-12 mb-1 mt-4">What gender do you most identify with?</span>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="gender" data-toggle="buttons" onchange="radioChange('#gender');">
+                <label class="btn btn-info mr-2 rounded">Male<input type="radio" value="Male"></label>
+                <label class="btn btn-info mr-2 rounded">Female<input type="radio" value="Female"></label>
+                <label class="btn btn-info mr-2 rounded">Non-binary<input type="radio" value="nonBinary"></label>
+                <label class="btn btn-info mr-2 rounded">Not listed<input type="radio" value="notListed"></label>
+                <label class="btn btn-info rounded">Do not wish to specify<input type="radio" value="n/a"></label>
+            </div>
+            <span class="col-md-12 mb-1 mt-4">What is the highest level of education you have achieved or currently pursuing?</span>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="degree" data-toggle="buttons" onchange="radioChange('#degree');">
+                <label class="btn btn-info mr-2 rounded">Less than high school<input type="radio" value="belowHD"></label>
+                <label class="btn btn-info mr-2 rounded">High school graduatae<input type="radio" value="HSD"></label>
+                <label class="btn btn-info mr-2 rounded">Associate's degree<input type="radio" value="Assoc"></label>
+                <label class="btn btn-info mr-2 rounded">Bachelor's degree<input type="radio" value="bach"></label>
+                <label class="btn btn-info mr-2 rounded">Master's/Professional degree<input type="radio" value="masProf"></label>
+                <label class="btn btn-info rounded">Doctorate degree or higher<input type="radio" value="doc"></label>
+            </div>
+            <span class="col-md-4 mb-1 mt-4">What is your degree or occupation?</span>
+            <div class="col-md-6 mb-1 mt-4">
+                <input type="text" class="form-control" id="major" onchange="radioChange('#major');">
+            </div>
+            <span class="col-md-12 mb-1 mt-4">How familiar are you with machine learning and artificial intelligence?</span>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="mlFam" data-toggle="buttons" onchange="radioChange('#mlFam');">
+                <label class="btn btn-info mr-2 rounded">1 (No knowledge)<input type="radio" value="1"></label>
+                <label class="btn btn-info mr-2 rounded">2<input type="radio" value="2"></label>
+                <label class="btn btn-info mr-2 rounded">3<input type="radio" value="3"></label>
+                <label class="btn btn-info mr-2 rounded">4<input type="radio" value="4"></label>
+                <label class="btn btn-info mr-2 rounded">5<input type="radio" value="5"></label>
+                <label class="btn btn-info mr-2 rounded">6<input type="radio" value="6"></label>
+                <label class="btn btn-info rounded">7 (Expert)<input type="radio" value="7"></label>
+            </div>
+            <span class="col-md-12 mb-1 mt-4">How familiar are you with entomology (the study of insects and arthropods)?</span>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4 p-2" id="entFam" data-toggle="buttons" onchange="radioChange('#entFam');">
+                <label class="btn btn-info mr-2 rounded">1 (No knowledge)<input type="radio" value="1"></label>
+                <label class="btn btn-info mr-2 rounded">2<input type="radio" value="2"></label>
+                <label class="btn btn-info mr-2 rounded">3<input type="radio" value="3"></label>
+                <label class="btn btn-info mr-2 rounded">4<input type="radio" value="4"></label>
+                <label class="btn btn-info mr-2 rounded">5<input type="radio" value="5"></label>
+                <label class="btn btn-info mr-2 rounded">6<input type="radio" value="6"></label>
+                <label class="btn btn-info rounded">7 (Expert)<input type="radio" value="7"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button class="btn btn-success col-md-3" onclick="toTutorial();">Continue</button>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
+<script src="scripts/userStudy.js"></script>
+</body>
+</html>
